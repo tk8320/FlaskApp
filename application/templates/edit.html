@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+{% block content %}
+ <div align="center">
+ <form action='{{ request.path }}'  method="post" style="margin-left: 20px; margin-right: 20px; width: 30%">
+  <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text" id="basic-addon1">H</span>
+  </div>
+  <input type="text" name="heading" class="form-control" value='{{ obj.heading }}' aria-label="Heading" aria-describedby="basic-addon1" required>
+</div>
+
+ <div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Description</span>
+  </div>
+  <textarea name="description" class="form-control" aria-label="With textarea" placeholder='{{ obj.description }}' required></textarea>
+ </div>
+<br>
+  <button type="submit" class="btn btn-primary">Add News</button>
+</form>
+ </div>
+
+{% endblock %}

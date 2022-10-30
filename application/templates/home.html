@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+<h1> LOGIN ID</h1>
+<br>
+<table class="table table-bordered table-hover table-striped table-dark ">
+    <thead>
+    <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Username</th>
+        <th scope="col">Type</th>
+        <th scope="col">Contact_no</th>
+        <th scope="col">Password</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for x in users %}
+      <tr>
+      <td scope="col">{{ x.id }}</td>
+      <td scope="col">{{ x.username }}</td>
+      <td scope="col">{{ x.type }}</td>
+      <td scope="col">{{ x.contact_no }}</td>
+      <td scope="col">{{ x.password }}</td>
+
+      </tr>
+
+  {% endfor %}
+  </tbody>
+</table>
+
+    <br>
+<table class="table table-bordered table-hover table-striped table-dark ">
+    <thead>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Age</th>
+      <th scope="col">Address</th>
+    </tr>
+  </thead>
+  <tbody>
+  {% for x in data %}
+      <tr>
+      <td scope="col">{{ x.name }}</td>
+      <td scope="col">{{ x.age }}</td>
+      <td scope="col">{{ x.address }}</td>
+      </tr>
+
+  {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
