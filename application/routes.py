@@ -47,15 +47,6 @@ else:
 
 # cryptography Function: Responsible for Hashing.
 
-
-def crypt(fname, p, x=db_id):
-    salt = hashlib.sha1((fname + str(x)).encode()).hexdigest()
-    hash_p = hashlib.sha1(p.encode()).hexdigest()
-    m_p = salt[:10] + hash_p[0:10] + salt[10:20] + hash_p[10:20] + salt[20:30] + hash_p[20:30]+ salt[30:] + hash_p[30:]
-    final_hash = hashlib.sha1(m_p.encode()).hexdigest()
-    return final_hash
-
-
 @app.route('/delete')
 def delete():
     if not session.get('username'):
